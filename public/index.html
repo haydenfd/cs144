@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task Board | Assignment 2</title>
+
+    <!-- This line provides automatic page and style reloading when files change -->
+    <script type="module" src="/lib/client/updater.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Task Board</h1>
+
+      <form id="addCard">
+        <input type="text" name="title" id="cardTitle" placeholder="Title" required>
+        <input type="color" name="color" id="cardColor" placeholder="Color">
+        <button type="submit" id="addButton">Add</button>
+        <button id="themeToggle" aria-label="Toggle Theme" type="button">
+          <img id="themeIcon" src="icons/light_mode.svg" alt="Light Mode Icon">
+      </button>       
+      </form>
+    </header>
+
+    <main id="board">
+      <section class="column" id="todo">
+        <h2 class="columnTitle">To Do</h2>
+      </section>
+
+      <section class="column" id="doing">
+        <h2 class="columnTitle">Doing</h2>
+      </section>
+
+      <section class="column" id="done">
+        <h2 class="columnTitle">Done</h2>
+      </section>
+    </main>
+
+    <!-- Template card to be cloned in JavaScript -->
+    <article class="template card" draggable="true">
+      <h3 class="title">[TEMPLATE]</h3>
+      <p class="description">You should never see this text.</p>
+      <textarea class="editDescription hidden"></textarea>
+      <div class="buttons">
+        <button class="edit"><img src="icons/edit.svg" alt="Edit"></button>
+        <button class="startMove"><img src="icons/move.svg" alt="Move"></button>
+        <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+      </div>
+    </article>
+  </body>
+</html>

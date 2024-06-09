@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root { 
+    box-sizing: border-box; 
+    --whitespace-color-light: #ffffff;
+    --whitespace-color-dark: #2A3439;
+    --text-color: #000000;
+    --gray-todo-done-bg-color-light: #f0f0f0;
+    --header-background: #202020;
+    --header-text: #ffffff;
+    --column-background-light: #f0f0f0;
+    --column-background-dark: #303030;    
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+* { 
+    font-family: Poppins, sans-serif;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--whitespace-color-light);
+}
+
+
+body.dark-mode {
+    background-color: #44535d;
+
+
+    #todo, #done {
+        background-color: #2e3941;
+    }
+
+    #doing {
+        background-color: #44535d;
+    }
+
+    .column > h2 {
+        color: white;
+    }
+
+    #addButton {
+        color: white;
+        background-color: #006400;
+    }
+
+    #cardTitle, #cardTitle::placeholder {
+        background-color: #7b7b7f;
+        color: white;
+    }
+}
+
+
+header {
+    width: 100%;
+    background-color: var(--header-background);
+    color: var(--header-text);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0.5rem 5rem; 
+}
+
+
+header h1 {
+    margin: 0;
+    font-size:x-large;
+}
+
+
+#addCard {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+  
+#cardTitle {
+    width: 20em;
+}
+  
+#cardColor {
+    width: 8em;
+    cursor: pointer;
+}
+  
+#addButton {
+    background-color: lightgreen;
+    color: black;
+    padding: 0.25rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#board {
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    height: 100%;
+}
+
+.column {
+    position: relative;
+    flex: 1;
+    padding-bottom: 3rem;
+    padding-top: 0;
+    height: 100%;
+    padding-left :0.5rem; 
+    padding-right :0.5rem; 
+
+}
+
+.column > h2 {
+    padding:  1rem 1rem 1rem 0;
+}
+
+
+#todo, #doing, #done {
+    flex: 1;
+    padding-bottom: 3rem;
+    height: 100%;
+}
+
+#todo, #done {
+    background-color: var(--gray-todo-done-bg-color-light);
+}
+
+#todo.dark-mode, #done.dark-mode {
+    background-color: #1c2e4a;
+}
+
+
+#doing {
+    background-color:var(--whitespace-color-light);
+}
+
+.card {
+    margin-block: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+    text-wrap: wrap;
+}
+
+.buttons {
+    visibility: hidden;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+  
+.card:hover > .buttons {
+    visibility: visible;
+  
+}
+  
+.buttons > * {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.buttons {
+    margin: 0;
+    padding: 0;
+}
+
+#themeToggle {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    transform: scale(1.1);
+    margin-left: 1.5rem;
+}
+
+/* .card {
+    transition: border 0.3s;
+  }
+   */
+
+
+/* header form {
+    display: flex; 
+    align-items: center; 
+} */
+/* 
+header input {
+    color: black;
+    margin-right: 10px; 
+}
+
+header button {
+    padding: 5px 10px; 
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#addCard {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+#addCard input,
+#addCard button {
+    margin: 0 0.5rem;
+}
+
+#cardTitle {
+    width: 20em;
+}
+
+#cardColor {
+    width: 8em;
+}
+
+#addButton {
+    background-color: lightgreen;
+    color: black;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+}
+   */
+/* 2.4 Board and columns */
+/* 
+#board {
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    height: 100%;
+}
+  
+#todo, #doing, #done {
+    flex: 1;
+    padding-bottom: 3rem;
+    height: 100%
+}
+
+#todo, #done {
+    background-color: #f0f0f0;
+}
+
+#doing {
+    background-color: white;
+}
+
+.column h2 {
+    margin: 0 0 1rem;
+}
+
+
+.card {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    position: relative; 
+    margin-block: 1rem;
+}
+
+
+.buttons {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.card:hover .buttons {
+    display: flex;
+}
+
+.buttons button {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#themeToggle {
+    background-color: transparent;
+    cursor: pointer;
+}
+ */
+
+/* .drop-zone:before {
+    content: "Drop here";
+    color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    pointer-events: none;
+} */
+
+.dragging {
+    opacity: 0.5;
+  }
+  
+
+.placeholder {
+    height: 100px;
+    background-color: white;
+    border: 2px dashed #ccc;
+    margin-bottom: 10px;
+}

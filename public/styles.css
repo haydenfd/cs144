@@ -1,0 +1,60 @@
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.template, .hidden {
+  display: none;
+}
+
+input, button, textarea {
+  font-size: 1rem;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+.moving {
+  border: 2px solid black;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.editDescription {
+  width: 100%;
+  height: 5rem;
+  background-color: inherit;
+}
+
+.edit, .startMove, .delete {
+  border: none;
+  background-color: inherit;
+}
+
+.edit:hover, .startMove:hover, .delete:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.25);
+}
+
+.moveHere {
+  border: none;
+  color: gray;
+  font-size: small;
+  background-color: transparent;
+}
+
+.moveHere:hover {
+  background-color: #e0e0e0;
+  color: black;
+  cursor: pointer;
+}
+
+.dropOnCard {
+  outline:4px solid blue;
+}
